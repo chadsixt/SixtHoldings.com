@@ -1,2 +1,2 @@
-# chadsixt.com
-Repo for Personal Website
+# SixtHoldings.com
+Repo for Sixt Holdings LLC
