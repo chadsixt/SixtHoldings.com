@@ -93,8 +93,6 @@ select {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 /* Logo */
@@ -103,10 +101,9 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 70px;      /* About 50% smaller */
-    padding: 0 20px;
+    
 
 }
 
@@ -187,6 +184,7 @@ p + p {
 }
 
 .section-label {
+    margin-top: 16px;
     margin-bottom: 16px;
     color: var(--accent-color);
     font-size: 0.82rem;
@@ -199,7 +197,7 @@ p + p {
 
 .hero-section {
     display: flex;
-    min-height: 650px;
+    min-height: auto;
     align-items: center;
     background:
         linear-gradient(
@@ -210,9 +208,6 @@ p + p {
     border-bottom: 1px solid var(--border-color);
 }
 
-.hero-content {
-    padding: 105px 0;
-}
 
 .hero-content h1 {
     color: var(--primary-dark);
@@ -220,7 +215,6 @@ p + p {
 
 .hero-description {
     max-width: 790px;
-    margin-top: 28px;
     color: var(--light-text-color);
     font-size: 1.18rem;
 }
