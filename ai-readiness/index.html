@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Readiness Analyzer for evaluating enterprise data, governance, semantics, integration, and AI enablement." />
+  <title>AI Readiness Analyzer | Sixt Holdings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <a class="back-link" href="/">← Back to sixtholdings.com</a>
+      <div class="eyebrow">Cognitive Infrastructure</div>
+      <h1>AI Readiness Analyzer</h1>
+      <p class="hero-copy">
+        Describe your organization's current data, analytics, software, and AI environment.
+        This browser-based assessment evaluates five dimensions that influence whether AI can operate
+        reliably across the enterprise.
+      </p>
+    </section>
+
+    <section class="card input-card">
+      <label for="environment">Describe your environment</label>
+      <textarea
+        id="environment"
+        rows="10"
+        placeholder="Example: We have data spread across SQL Server, Excel, SharePoint, and several SaaS platforms. Different groups define customers differently. We are experimenting with Copilot and a RAG application, but data ownership and lineage are unclear..."
+      ></textarea>
+
+      <div class="input-actions">
+        <button id="exampleBtn" class="secondary-btn" type="button">Load Example</button>
+        <button id="analyzeBtn" class="primary-btn" type="button">Analyze Environment</button>
+      </div>
+
+      <p class="privacy-note">
+        Your text stays in your browser. This version does not send your information to an external AI service.
+      </p>
+    </section>
+
+    <section id="results" class="results hidden" aria-live="polite">
+      <section class="card score-card">
+        <div>
+          <div class="eyebrow">Overall Assessment</div>
+          <h2>AI Readiness Score</h2>
+        </div>
+        <div class="overall-score">
+          <span id="overallScore">0</span><span class="score-denominator">/100</span>
+        </div>
+        <div class="progress-track">
+          <div id="overallBar" class="progress-fill"></div>
+        </div>
+        <p id="readinessLabel" class="readiness-label"></p>
+      </section>
+
+      <section class="card">
+        <h2>Readiness Dimensions</h2>
+        <div id="dimensionGrid" class="dimension-grid"></div>
+      </section>
+
+      <section class="card finding-card">
+        <div class="eyebrow">Primary Finding</div>
+        <h2 id="primaryFindingTitle">Assessment</h2>
+        <p id="primaryFinding"></p>
+      </section>
+
+      <section class="card">
+        <h2>Recommended Next Steps</h2>
+        <ol id="recommendations" class="recommendation-list"></ol>
+      </section>
+
+      <section class="card signals-card">
+        <h2>Signals Detected</h2>
+        <p class="section-intro">
+          These indicators explain the score and are not intended as a formal audit determination.
+        </p>
+        <div id="signals" class="signal-list"></div>
+      </section>
+    </section>
+
+    <section class="methodology">
+      <h2>How this works</h2>
+      <p>
+        The analyzer uses a lightweight rules-based natural-language scoring model. It looks for positive
+        and negative signals related to data architecture, governance, shared meaning, AI enablement,
+        and system integration. The assessment is intended as a conversation starter, not a formal certification.
+      </p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Sixt Holdings, LLC · AI Readiness Analyzer</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
