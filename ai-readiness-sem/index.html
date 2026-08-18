@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sixt Holdings AI Readiness Analyzer">
+  <title>AI Readiness Analyzer | Sixt Holdings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page-shell">
+  <section class="hero">
+    <a class="back-link" href="/">← Back to SixtHoldings.com</a>
+    <div class="eyebrow">Cognitive Infrastructure</div>
+    <h1>AI Readiness Analyzer</h1>
+    <p class="hero-copy">
+      Describe your organization's data, governance, software, analytics, and AI environment.
+      The analyzer uses a small semantic model in your browser to evaluate five dimensions of AI readiness.
+    </p>
+  </section>
+
+  <section class="card">
+    <label for="environment">Describe your environment</label>
+    <textarea id="environment" rows="11" placeholder="Example: Our operational data is distributed across several systems. Teams have begun centralizing data and deploying analytics, but ownership and shared definitions are inconsistent..."></textarea>
+    <div class="input-actions">
+      <button id="exampleBtn" class="secondary-btn" type="button">Load Example</button>
+      <button id="analyzeBtn" class="primary-btn" type="button">Analyze Environment</button>
+    </div>
+    <p class="privacy-note">
+      Your assessment text is processed locally in your browser. Model files are downloaded from their hosting services, but your assessment text is not submitted to an AI API.
+    </p>
+    <p id="modelStatus" class="privacy-note">Semantic model loads on first use.</p>
+  </section>
+
+  <section id="results" class="results hidden">
+    <section class="card score-card">
+      <div>
+        <div class="eyebrow">Overall Assessment</div>
+        <h2>AI Readiness Score</h2>
+      </div>
+      <div class="overall-score"><span id="overallScore">0</span><span class="score-denominator">/100</span></div>
+      <div class="progress-track"><div id="overallBar" class="progress-fill"></div></div>
+      <p id="readinessLabel" class="readiness-label"></p>
+    </section>
+
+    <section class="card">
+      <h2>Readiness Dimensions</h2>
+      <div id="dimensionGrid" class="dimension-grid"></div>
+    </section>
+
+    <section class="card finding-card">
+      <div class="eyebrow">Primary Finding</div>
+      <h2 id="primaryFindingTitle"></h2>
+      <p id="primaryFinding"></p>
+    </section>
+
+    <section class="card">
+      <h2>Recommended Next Steps</h2>
+      <ol id="recommendations"></ol>
+    </section>
+
+    <section class="card">
+      <h2>How the score was produced</h2>
+      <div id="signals" class="signal-list"></div>
+    </section>
+  </section>
+
+  <section class="methodology">
+    <h2>Methodology</h2>
+    <p>
+      This version blends semantic similarity with transparent rules. The semantic model compares the meaning
+      of the submitted description with maturity patterns defined for data architecture, governance,
+      organizational meaning, AI enablement, and integration. It is intended as an assessment aid and
+      conversation starter, not a formal certification.
+    </p>
+  </section>
+
+  <footer>© <span id="year"></span> Sixt Holdings, LLC</footer>
+</main>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
